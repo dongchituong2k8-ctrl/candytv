@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>CandyTV – Dịch vụ cày thuê Roblox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top,#2b0a3d,#07010a);
+      color:#fff;
+    }
+    .app{
+      max-width:420px;
+      margin:auto;
+      padding:16px;
+    }
+    .header{
+      text-align:center;
+      margin-bottom:16px;
+    }
+    .header h1{
+      margin:6px 0;
+      color:#8be9fd;
+    }
+    .card{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:14px;
+      padding:14px;
+      margin-bottom:12px;
+      cursor:pointer;
+    }
+    .card:hover{
+      background:rgba(255,255,255,0.15);
+    }
+    .title{
+      font-weight:bold;
+      margin-bottom:4px;
+    }
+    .hidden{display:none;}
+    input,select,textarea{
+      width:100%;
+      padding:10px;
+      border-radius:10px;
+      border:none;
+      margin-top:8px;
+    }
+    button{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:none;
+      background:#8b5cf6;
+      color:white;
+      font-size:16px;
+      margin-top:12px;
+    }
+    .status{
+      margin-top:10px;
+      font-size:14px;
+      opacity:0.9;
+    }
+    .footer{
+      text-align:center;
+      font-size:14px;
+      margin-top:16px;
+      opacity:0.85;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app">
+  <div class="header">
+    <h1>CandyTV</h1>
+    <div>Dịch vụ cày thuê – Blox Fruit</div>
+  </div>
+
+  <div id="menu">
+    <div class="card" onclick="openForm('Beli – Fragment – F')">💰 Beli – Fragment – F</div>
+    <div class="card" onclick="openForm('V4 – Tộc')">🔥 V4 – Tộc</div>
+    <div class="card" onclick="openForm('Kiếm – Súng – Mele')">⚔️ Kiếm – Súng – Mele</div>
+    <div class="card" onclick="openForm('Item – Nhiệm vụ – Khác')">🌊 Item – Nhiệm vụ – Khác</div>
+    <div class="card" onclick="openForm('Treo – Nâng cấp – Farm')">🏝️ Treo – Nâng cấp – Farm</div>
+  </div>
+
+  <div id="form" class="hidden">
+    <div class="card">
+      <div class="title" id="serviceName"></div>
+
+      <input placeholder="Tên của bạn">
+      <input placeholder="Zalo (tên + SĐT)">
+      <input placeholder="ID game (tên tài khoản)">
+      <textarea placeholder="Ghi chú cho admin (nếu có)"></textarea>
+
+      <button onclick="submitOrder()">Gửi đơn</button>
+
+      <div class="status">
+        ⌛ Trạng thái: Chờ admin duyệt
+      </div>
+    </div>
+    <button onclick="back()">⬅ Quay lại</button>
+  </div>
+
+  <div class="footer">
+    📞 Zalo: 0397751079<br>
+    🎵 TikTok: dc.tng1208
+  </div>
+</div>
+
+<script>
+function openForm(name){
+  document.getElementById("menu").classList.add("hidden");
+  document.getElementById("form").classList.remove("hidden");
+  document.getElementById("serviceName").innerText = "Dịch vụ: " + name;
+}
+function back(){
+  document.getElementById("form").classList.add("hidden");
+  document.getElementById("menu").classList.remove("hidden");
+}
+function submitOrder(){
+  alert("Đã gửi đơn! Admin sẽ duyệt sớm nhất.");
+}
+</script>
+
+</body>
+</html>
